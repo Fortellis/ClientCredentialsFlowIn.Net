@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <script type="text/javascript">
+        const getToken = () => {
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "/token");
+            xhr.send();
+            xhr.addEventListener("readystatechange", function () {
+                if (this.readyState === 4) {
+                    console.log(xhr.responseText);
+                }
+            });
+        };        
+    </script>
+    <button onclick="getToken()">Get Token</button>
+</div>
